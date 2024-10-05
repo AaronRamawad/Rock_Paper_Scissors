@@ -1,6 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
+let humanChoice;
+let computerChoice;
+
 function playRound(humanChoice, computerChoice) {
 
     console.log(humanChoice);
@@ -58,44 +61,37 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getHumanChoice() {
-    let userChoice = prompt("Rock?, Paper?, or Scissors?");
-
-    if (userChoice.toLowerCase() === "rock") {
-        return "Rock";
-    } else if (userChoice.toLowerCase() === "paper") {
-        return "Paper";
-    } else if (userChoice.toLowerCase() === "scissors") {
-        return "Scissors";
-    } else {
-        console.log("Not a Proper Response");
-        getHumanChoice();
-    }
-}
-
-
 function playGame() {
-    let humanChoice;
-    let computerChoice;
 
-    let i = 0;
-    while (i < 5) {
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-
-        playRound(humanChoice, computerChoice);
-        i += 1;
+    computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+    
+    if (humanScore === 5) {
+        console.log("You beat the Computer!!!");
     }
-
-    if (humanScore > computerScore) {
-        console.log("You beat the Computer");
-    }   else if (computerScore > humanScore) {
-        console.log("You lost to the Computer");
+    if (computerScore === 5) {
+        console.log("You lost to the Computer!!!");
     } else {
-        console.log("You tied");
+        console.log(`Score: ${humanScore} - ${computerScore}`);
     }
 }
 
-playGame();
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
+rock.addEventListener('click', () => {
+    humanChoice = "Rock";
+    playGame();
+});
+
+paper.addEventListener('click', () => {
+    humanChoice = "Paper";
+    playGame();
+});
+
+scissors.addEventListener('click', () => {
+    humanChoice = "Scissors";
+    playGame();
+});
     

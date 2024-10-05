@@ -89,13 +89,11 @@ function playGame() {
 
     if (humanScore > computerScore) {
         console.log("You beat the Computer");
-    } else if (computerScore > humanScore) {
-        console.log("You lost to the Computer")
+    }   else if (computerScore > humanScore) {
+        console.log("You lost to the Computer");
     } else {
-        console.log("You tied with the Computer");
+        console.log("You tied");
     }
-
-    console.log(`Score: ${humanScore} - ${computerScore}`);
 }
 
 playGame();

@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-choices {
+    display: flex;
+    gap: 32px;
+
+}
+
+button {
+    width: 80px;
+    height: 50px;
+}

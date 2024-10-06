@@ -8,26 +8,33 @@
         <link href="./styles.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
-        <p>Score</p>
-        <div class="scoreboard">
-            <div>
-                <p>You</p>
-                <p></p>
-            </div>
-            <div>
-                <p>Computer</p>
-                <p></p>
+        <div class="header">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div class="score-container">
+            <p class="score-title">Score</p>
+            <div class="scoreboard">
+                <div class="score-card">
+                    <p class="score-name">You</p>
+                    <p class="human-score">0</p>
+                </div>
+                <div class="score-card">
+                    <p class="score-name">Computer</p>
+                    <p class="computer-score">0</p>
+                </div>
             </div>
         </div>
         <div class="main">
-            <p>Opponent:</p>
-            <p></p>
+            <p class="opponent-title">Opponent:</p>
+            <p class="opponent-choice">"CHOICE"</p>
             <div class="player-choices">
                 <button class="rock">Rock</button>
                 <button class="paper">Paper</button>
                 <button class="scissors">Scissors</button>
             </div>
+        </div>
+        <div class="footer">
+            <p>Aaron Ramawad @ The Odin Project</p>
         </div>
     </body>
 </html>

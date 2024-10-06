@@ -4,6 +4,13 @@ let computerScore = 0;
 let humanChoice;
 let computerChoice;
 
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const humanScoreBox = document.querySelector('.human-score');
+const computerScoreBox = document.querySelector('.computer-score');
+const computerChoiceBox = document.querySelector('.opponent-choice');
+
 function playRound(humanChoice, computerChoice) {
 
     console.log(humanChoice);
@@ -64,7 +71,9 @@ function getComputerChoice() {
 function playGame() {
 
     computerChoice = getComputerChoice();
+    updateOpponentChoice(computerChoice);
     playRound(humanChoice, computerChoice);
+    updateScore();
     
     if (humanScore === 5) {
         console.log("You beat the Computer!!!");
@@ -76,9 +85,14 @@ function playGame() {
     }
 }
 
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
+function updateOpponentChoice(computerChoice) {
+    computerChoiceBox.textContent = computerChoice;
+}
+
+function updateScore() {
+    humanScoreBox.textContent = humanScore;
+    computerScoreBox.textContent = computerScore;
+}
 
 rock.addEventListener('click', () => {
     humanChoice = "Rock";

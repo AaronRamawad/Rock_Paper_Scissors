@@ -2,13 +2,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;        
 }
 
 .scoreboard {
     display: flex;
     gap: 32px;
     justify-content: space-between;
+    border: solid 1px rgb(0, 0, 0);
 }
 
 .main {
